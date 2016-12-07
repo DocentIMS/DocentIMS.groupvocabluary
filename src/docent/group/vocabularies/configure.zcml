@@ -1,0 +1,61 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="docent.group.vocabularies">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+
+    <utility
+        name="docent.group.Booster_Board_Members"
+        component="docent.group.vocabularies.vocabularies.IBoosterBoardMembersVocabularyFactory"
+    />
+
+    <utility
+        name="docent.group.Advisors"
+        component="docent.group.vocabularies.vocabularies.IAdvisorsVocabularyFactory"
+    />
+
+    <utility
+        name="docent.group.Executive_Committee"
+        component="docent.group.vocabularies.vocabularies.IExecutiveCommitteeVocabularyFactory"
+    />
+
+    <utility
+        name="docent.group.LWHS_Staff_Members"
+        component="docent.group.vocabularies.vocabularies.ILWHSStaffMembersVocabularyFactory"
+    />
+
+    <utility
+        name="docent.group.Trained_Members"
+        component="docent.group.vocabularies.vocabularies.ITrainedMembersVocabularyFactory"
+    />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="docent.group.vocabularies"
+      directory="profiles/default"
+      description="Installs the docent.group.vocabularies add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="docent.group.vocabularies (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the docent.group.vocabularies add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="docent.group.vocabularies-hiddenprofiles" />
+
+</configure>
