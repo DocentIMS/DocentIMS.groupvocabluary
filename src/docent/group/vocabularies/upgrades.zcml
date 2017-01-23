@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="docent.group.vocabularies">
+
+  <include package="Products.GenericSetup" file="meta.zcml" />
+
+    <genericsetup:upgradeStep
+        title="Update adds the Booster Members vocabulary"
+        description="Update Version Number"
+        source="*"
+        destination="1.1"
+        handler=".upgrades.upgradeTo1p1"
+        profile="docent.group.vocabularies:default" />
+
+</configure>

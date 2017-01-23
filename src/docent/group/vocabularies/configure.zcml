@@ -35,6 +35,11 @@
         component="docent.group.vocabularies.vocabularies.ITrainedMembersVocabularyFactory"
     />
 
+    <utility
+        name="docent.group.Booster_Members"
+        component="docent.group.vocabularies.vocabularies.IBoosterMembersVocabularyFactory"
+    />
+
   <genericsetup:registerProfile
       name="default"
       title="docent.group.vocabularies"

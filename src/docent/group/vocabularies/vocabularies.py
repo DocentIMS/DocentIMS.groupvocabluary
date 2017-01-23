@@ -11,6 +11,7 @@ ADVISORS_GROUP_ID = 'Advisors'
 EXECUTIVE_COMMITTEE_GROUP_ID = 'Executive_Committee'
 LWHS_STAFF_MEMBERS_GROUP_ID = 'LWHS_Staff_Members'
 TRAINED_MEMBERS_GROUP_ID = 'Trained_Members'
+BOOSTER_MEMBERS_GROUP_ID = 'Booster_Members'
 
 
 def getGroupMemberVocabulary(group_name):
@@ -82,3 +83,12 @@ class ITrainedMembersVocabulary(object):
     def __call__(self, context):
         return getGroupMemberVocabulary(TRAINED_MEMBERS_GROUP_ID)
 ITrainedMembersVocabularyFactory = ITrainedMembersVocabulary()
+
+@implementer(IVocabularyFactory)
+class IBoosterMembersVocabulary(object):
+    """
+    build a vocabulary based on a the Booster Members Group
+    """
+    def __call__(self, context):
+        return getGroupMemberVocabulary(BOOSTER_MEMBERS_GROUP_ID)
+IBoosterMembersVocabularyFactory = IBoosterMembersVocabulary()
