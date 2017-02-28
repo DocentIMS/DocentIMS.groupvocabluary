@@ -6,13 +6,19 @@ from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.interfaces import IVocabularyFactory
 from zope.interface import implementer
 
-BOOSTER_BOARD_MEMBERS_GROUP_ID = 'Booster_Board_Members'
-ADVISORS_GROUP_ID = 'Advisors'
-EXECUTIVE_COMMITTEE_GROUP_ID = 'Executive_Committee'
-LWHS_STAFF_MEMBERS_GROUP_ID = 'LWHS_Staff_Members'
-TRAINED_MEMBERS_GROUP_ID = 'Trained_Members'
-BOOSTER_MEMBERS_GROUP_ID = 'Booster_Members'
+# BOOSTER_BOARD_MEMBERS_GROUP_ID = 'Booster_Board_Members'
+# ADVISORS_GROUP_ID = 'Advisors'
+# EXECUTIVE_COMMITTEE_GROUP_ID = 'Executive_Committee'
+# LWHS_STAFF_MEMBERS_GROUP_ID = 'LWHS_Staff_Members'
+# TRAINED_MEMBERS_GROUP_ID = 'Trained_Members'
+# BOOSTER_MEMBERS_GROUP_ID = 'Booster_Members'
 
+from docent.group.vocabularies.app_config import (BOOSTER_BOARD_MEMBERS_GROUP_ID,
+                                                  ADVISORS_GROUP_ID,
+                                                  EXECUTIVE_COMMITTEE_GROUP_ID,
+                                                  LWHS_STAFF_MEMBERS_GROUP_ID,
+                                                  TRAINED_MEMBERS_GROUP_ID,
+                                                  BOOSTER_MEMBERS_GROUP_ID,)
 
 def getGroupMemberVocabulary(group_name):
     """Return a set of groupmembers, return an empty set if group not found
@@ -25,6 +31,7 @@ def getGroupMemberVocabulary(group_name):
     terms = []
 
     if group_members:
+        terms.append(SimpleVocabulary.createTerm('', '', 'Choose One'))
         for member_data in group_members:
             member_id = member_data.getId()
             member_fullname = member_data.getProperty('fullname')
