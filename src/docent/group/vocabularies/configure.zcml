@@ -36,6 +36,11 @@
     />
 
     <utility
+        name="docent.group.Training_Members"
+        component="docent.group.vocabularies.vocabularies.ITrainingMembersVocabularyFactory"
+    />
+
+    <utility
         name="docent.group.Booster_Members"
         component="docent.group.vocabularies.vocabularies.IBoosterMembersVocabularyFactory"
     />

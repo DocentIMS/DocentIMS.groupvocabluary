@@ -18,6 +18,7 @@ from docent.group.vocabularies.app_config import (BOOSTER_BOARD_MEMBERS_GROUP_ID
                                                   EXECUTIVE_COMMITTEE_GROUP_ID,
                                                   LWHS_STAFF_MEMBERS_GROUP_ID,
                                                   TRAINED_MEMBERS_GROUP_ID,
+                                                  TRAINING_MEMBERS_GROUP_ID,
                                                   BOOSTER_MEMBERS_GROUP_ID,)
 
 def getGroupMemberVocabulary(group_name):
@@ -90,6 +91,15 @@ class ITrainedMembersVocabulary(object):
     def __call__(self, context):
         return getGroupMemberVocabulary(TRAINED_MEMBERS_GROUP_ID)
 ITrainedMembersVocabularyFactory = ITrainedMembersVocabulary()
+
+@implementer(IVocabularyFactory)
+class ITrainingMembersVocabulary(object):
+    """
+    build a vocabulary based on a the Trained Member Group
+    """
+    def __call__(self, context):
+        return getGroupMemberVocabulary(TRAINING_MEMBERS_GROUP_ID)
+ITrainingMembersVocabularyFactory = ITrainingMembersVocabulary()
 
 @implementer(IVocabularyFactory)
 class IBoosterMembersVocabulary(object):
