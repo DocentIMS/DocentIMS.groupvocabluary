@@ -6,7 +6,7 @@ EXECUTIVE_COMMITTEE_GROUP_ID = 'Executive_Committee'
 LWHS_STAFF_MEMBERS_GROUP_ID = 'LWHS_Staff_Members'
 TRAINED_MEMBERS_GROUP_ID = 'Trained_Members'
 TRAINING_MEMBERS_GROUP_ID = 'Training_Members'
-BOOSTER_MEMBERS_GROUP_ID = 'Booster_Members'
+BOOSTER_MEMBERS_GROUP_ID = 'Booster_Member'
 
 GROUP_ID_DICT = {BOOSTER_BOARD_MEMBERS_GROUP_ID: 'Booster Board Members',
                  ADVISORS_GROUP_ID: 'Advisors',
